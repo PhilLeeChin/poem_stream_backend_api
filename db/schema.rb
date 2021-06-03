@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_022433) do
+ActiveRecord::Schema.define(version: 2021_06_03_030055) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 2021_06_03_022433) do
   create_table "poems", force: :cascade do |t|
     t.string "title"
     t.string "lines"
-    t.integer "genre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "genre_id", null: false
+    t.index ["genre_id"], name: "index_poems_on_genre_id"
   end
 
+  add_foreign_key "poems", "genres"
 end

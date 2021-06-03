@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Genre.destroy_all
+Poem.destroy_all
+
 anger = Genre.create(name: "Anger")
 sad = Genre.create(name: "Sad")
 happy = Genre.create(name: "Happy")

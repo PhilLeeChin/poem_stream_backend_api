@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord
-    has_many :poems
+    has_many :poems, dependent: :destroy
 end

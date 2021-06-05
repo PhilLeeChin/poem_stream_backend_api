@@ -2,7 +2,6 @@ class Api::PoemsController < ApplicationController
 
     def index
         poems = Poem.all
-
         # render json: poems
         render json: PoemSerializer.new(poems)
     end
@@ -19,11 +18,6 @@ class Api::PoemsController < ApplicationController
 
     # def show
     #     render json: @poem
-    # end
-
-    # private
-    # def set_poem
-    #     poem = Poem.find(params[:id])
     # end
 
     def poem_params

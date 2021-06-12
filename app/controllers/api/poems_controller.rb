@@ -21,12 +21,12 @@ class Api::PoemsController < ApplicationController
         end
     end
 
-   def destroy
+    def destroy
         poem = Poem.find(params[:id])
         if poem.destroy
             render json: {id: poem.id}
         end
-   end
+    end
 
     def poem_params
         params.require(:poem).permit(:title, :lines, :genre_id)
